@@ -7,13 +7,12 @@ library(shinyWidgets)
 library(DT)
 library(wordcloud)
 library(RColorBrewer)
-library(pdftools)
 
 source("global.R")
 
 server <- function(input, output) {
   
-  data <- read.csv("broadway.csv")
+  data <- read_csv("broadway.csv")
   data$Date.Full <- mdy(data$Date.Full)
   
   overview <- reactiveValues(

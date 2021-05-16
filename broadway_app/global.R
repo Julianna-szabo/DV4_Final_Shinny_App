@@ -16,7 +16,11 @@ plot <- function(data) {
   data %>% 
     ggplot(aes(x = Date.Full, y = Statistics.Attendance, color = Show.Name)) +
     geom_line() +
-    labs(x = "Date of performance", y = "Number of Attendants", color = "Show name") +
+    labs(
+      title = "Change in Attendance over time"
+      x = "Date of performance", 
+      y = "Number of Attendants", 
+      color = "Show name") +
     theme(legend.position = "bottom")
 }
 
@@ -26,6 +30,9 @@ bar_chart <- function(data) {
     summarise(avg_rev_per_att = mean(rev_per_att)) %>% 
     ggplot(aes(x = Show.Name, y = avg_rev_per_att)) +
     geom_bar(stat = "identity") +
-    labs(x = "Show names", y = "Average price per attendant") +
+    labs(
+      title = "Average price per attendant",
+      x = "Show names",
+      y = "Average price per attendant") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
 }
