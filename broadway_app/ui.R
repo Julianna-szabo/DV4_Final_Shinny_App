@@ -38,6 +38,7 @@ ui <- dashboardPage(
                 ),
                 tabItem(tabName = "plots",
                         plotOutput("plot"),
+                        br(),
                         plotOutput("bar_chart")
                 ),
                 tabItem(tabName = "data",

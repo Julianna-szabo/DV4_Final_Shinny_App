@@ -17,11 +17,12 @@ plot <- function(data) {
     ggplot(aes(x = Date.Full, y = Statistics.Attendance, color = Show.Name)) +
     geom_line() +
     labs(
-      title = "Change in Attendance over time"
+      title = "Change in Attendance over time",
       x = "Date of performance", 
       y = "Number of Attendants", 
       color = "Show name") +
-    theme(legend.position = "bottom")
+    theme(legend.position = "bottom",
+          plot.title = element_text(face = "bold", hjust = 0.5))
 }
 
 bar_chart <- function(data) {
@@ -34,5 +35,6 @@ bar_chart <- function(data) {
       title = "Average price per attendant",
       x = "Show names",
       y = "Average price per attendant") +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+    theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+          plot.title = element_text(face = "bold", hjust = 0.5))
 }
